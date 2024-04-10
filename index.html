@@ -1,8 +1,3 @@
-<?php
-/** !!_SITE_MONITOR_FALSE_!! */
-/** !!_SITE_MONITOR_FB_!! */
-include_once("/var/www/_templates/config/public/config-medicare.php");
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,10 +6,7 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-        <?php echo (($domainName == "Benefit Checker Help") ? "Benefits For Seniors" : $domainName) ?>
-
-    </title>
+    <title>Benefits For Seniors</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -85,10 +77,9 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
             <p class="">
                 Don't miss out - Speak to an official agent to claim your benefit card now.
             </p>
-            <a href="tel:<?php echo $ringbaNumberPrimaryTel; ?>">
+            <a href="tel:">
                 <button class="capitalize font-bold  bg-green-500 animate__animated animate__pulse animate__infinite  text-white my-4 p-5  shadow-2xl md:text-2xl text-base">
                     Click to Call
-                    <?php echo $ringbaNumberPrimary; ?>
                 </button>
             </a>
 
@@ -116,20 +107,19 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
 
     <footer class="footer mt-12 footer-center p-4 mt-12 mb-2 text-center max-w-6xl mx-auto text-xs">
         <div class="grid grid-flow-col gap-3 md:w-1/3 mx-auto my-8">
-            <a class="link link-hover" href="https://<?php echo $currentDomain; ?>/terms"> Terms & Conditions </a>
+            <a class="link link-hover" href="/terms.html"> Terms & Conditions </a>
             <p class="text-blue-500">|</p>
-            <a class="link link-hover" href="https://<?php echo $currentDomain; ?>/privacy"> Privacy Policy </a>
+            <a class="link link-hover" href="/privacy.html"> Privacy Policy </a>
 
             <p class="text-blue-500">|</p>
-            <a class="link link-hover" href="https://<?php echo $currentDomain; ?>/privacy.php#caresidents"> CCPA </a>
+            <a class="link link-hover" href="/CCPA.html"> CCPA </a>
         </div>
         <div class="mt-8">
             <p>Copyright
-                <?php echo $domainName ?> © 2024 - All right reserved
+                domain © 2024 - All right reserved
             </p>
         </div>
     </footer>
-    <script src="https://cdn.sppoints.xyz/track.js?rtkcmpid=<?php echo $rtkCmpId; ?>"></script>
     <script>
         const setRtClickId = () => {
             var anchorTag = document.getElementById("rtRef");
@@ -157,7 +147,7 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
 
         const setZip = () => {
             const newUrl = new URL(window.location.href);
-            newUrl.searchParams.set('ip_zip', "<?php echo $ipZip; ?>");
+            newUrl.searchParams.set('ip_zip', "");
             window.history.pushState({
                 path: newUrl.href
             }, '', newUrl.href);
@@ -165,7 +155,7 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
 
         const loadRingba = () => {
           var script = document.createElement("script");
-          script.src = "<?php echo $ringbaScriptPrimary; ?>";
+          script.src = "";
 
           let timeoutId = setTimeout(addRingbaTags, 1000);
 
@@ -343,7 +333,7 @@ include_once("/var/www/_templates/config/public/config-medicare.php");
         btnNo.addEventListener("click", () => {
             display2.style.display = "none";
             window.location.href =
-                "<?php echo $mbOfferSite; ?>";
+                "";
             display5.style.display = "block";
         });
     </script>
